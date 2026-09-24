@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<!-- Define o idioma do documento como Português do Brasil -->
+<html lang="pt-BR">
+
+<head>
+    <!-- Define a codificação de caracteres para suportar acentos -->
+    <meta charset="UTF-8">
+    <!-- Garante que a página seja responsiva em dispositivos móveis -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EX01</title>
+    
+    <!-- Importando a biblioteca do jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <style>
+        /* Centraliza o balão na tela inteira */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            /* Ocupa 100% da altura da tela */
+            margin: 0;
+            background-color: #f0f0f0;
+            /* Fundo cinza claro */
+        }
+
+        /* Definição visual do balão */
+        #balao {
+            width: 200px;
+            height: 200px;
+            background-color: rgb(255, 0, 0);
+            /* Cor inicial: Vermelho */
+            border-radius: 50%;
+            /* Torna o elemento um círculo perfeito */
+            cursor: pointer;
+            /* Muda o cursor para a "mãozinha" ao passar o mouse */
+            /* Suaviza a transição de tamanho e cor (animação de 0.2 segundos) */
+            transition: width 0.2s, height 0.2s, background-color 0.2s;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Elemento HTML que representa o balão -->
+    <div id="balao"></div>
+
+    <script>
+        /* SELEÇÃO DE ELEMENTOS E CONFIGURAÇÃO INICIAL */
+
+        // Seleciona a div do balão usando o seletor do jQuery
+        const $balao = $('#balao');
+
+        // Lista de cores que o balão vai assumir (Vermelho, Verde, Azul)
+        const cores = [
+            'rgb(255, 0, 0)',
+            'rgb(0, 128, 0)',
+            'rgb(0, 0, 255)'
+        ];
+
+        // Variáveis de controle de estado (tamanho inicial e índice da cor atual)
+        let tamanhoAtual = 200;
+        let indiceCor = 0; // Começa no índice 0 (Vermelho)
+
+        /* FUNÇÕES */
+
+        // Função responsável por aplicar as mudanças de tamanho e cor usando o jQuery (.css())
+        function atualizarBalao() {
+            $balao.css({
+                'width': tamanhoAtual + 'px',
+                'height': tamanhoAtual + 'px',
+                'background-color': cores[indiceCor]
+            });
+        }
+
+        /* EVENTOS COM JQUERY */
+
+        // Evento 1: Dispara sempre que o usuário CLICA no balão
+        $balao.click(() => {
+            // Aumenta o diâmetro em 10 pixels
+            tamanhoAtual += 10;
+
+            // Verifica se o balão ultrapassou o limite máximo de tamanho (420px)
+            if (tamanhoAtual > 420) {
+                // Se estourar, reseta o tamanho e a cor para o estado inicial
+                tamanhoAtual = 200;
+                indiceCor = 0;
+            } else {
+                // Se não estourar, avança para a próxima cor da lista.
+                indiceCor = (indiceCor + 1) % cores.length;
+            }
+
+            // Aplica as novas propriedades visualmente
+            atualizarBalao();
+        });
+
+        // Evento 2: Dispara sempre que o mouse SAI de cima do balão
+        $balao.mouseleave(() => {
+            // Diminui o tamanho em 5 pixels (com limite mínimo de 200px)
+            tamanhoAtual = Math.max(200, tamanhoAtual - 5);
+
+            // Retrocede a cor na ordem inversa.
+            indiceCor = (indiceCor - 1 + cores.length) % cores.length;
+
+            // Aplica as novas propriedades visualmente
+            atualizarBalao();
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora Básica</title>
+</head>
+<body>
+
+    <form id="calcForm">
+        <!-- Membro esquerdo -->
+        <input type="text" id="leftOperand" placeholder="Número esquerdo">
+
+        <!-- Seletor de operadores -->
+        <select id="operator">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+            <option value="%">%</option>
+        </select>
+
+        <!-- Membro direito -->
+        <input type="text" id="rightOperand" placeholder="Número direito">
+
+        <!-- Botão de envio -->
+        <input type="submit" value="Try me!">
+    </form>
+
+    <script>
+        // 1. Pop-up de alerta a cada 30 segundos
+        setInterval(function() {
+            alert('Please, use me...');
+        }, 30000);
+
+        // 2. Lógica da calculadora ao enviar o formulário
+        const form = document.getElementById('calcForm');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault(); // Evita o recarregamento da página
+
+            const leftInput = document.getElementById('leftOperand').value;
+            const rightInput = document.getElementById('rightOperand').value;
+            const operator = document.getElementById('operator').value;
+
+            // Validação: verificar se são números inteiros positivos (>= 0)
+            // Expressão regular para garantir que a string contém apenas dígitos (0-9)
+            const regex = /^\d+$/;
+
+            if (!regex.test(leftInput) || !regex.test(rightInput)) {
+                alert('Error :(');
+                return;
+            }
+
+            const num1 = parseInt(leftInput, 10);
+            const num2 = parseInt(rightInput, 10);
+            let result;
+
+            // Tratamento para divisão e módulo por zero
+            if ((operator === '/' || operator === '%') && num2 === 0) {
+                result = "It’s over 9000!";
+                alert(result);
+                console.log(result);
+                return;
+            }
+
+            // Execução do cálculo de acordo com o operador
+            switch (operator) {
+                case '+':
+                    result = num1 + num2;
+                    break;
+                case '-':
+                    result = num1 - num2;
+                    break;
+                case '*':
+                    result = num1 * num2;
+                    break;
+                case '/':
+                    result = num1 / num2;
+                    break;
+                case '%':
+                    result = num1 % num2;
+                    break;
+                default:
+                    return;
+            }
+
+            // Exibição do resultado em alerta e no console
+            alert(result);
+            console.log(result);
+        });
+    </script>
+
+</body>
+</html>

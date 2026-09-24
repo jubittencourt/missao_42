@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mudar Cor</title>
+
+    <link rel="stylesheet" href="background.css">
+
+    <!-- 1. Importando a biblioteca do jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Mude a cor do fundo!</h1>
+
+        <!-- Removido o onclick daqui -->
+        <button id="botaoMudar">
+            Mudar cor
+        </button>
+    </div>
+
+    <script>
+        // 2. Usando o jQuery para escutar o clique e mudar o fundo
+        $('#botaoMudar').click(function() {
+            const cores = [
+                "#FFB6C1",
+                "#ADD8E6",
+                "#98FB98",
+                "#DDA0DD",
+                "#FFD700",
+                "#FFA07A",
+                "#87CEEB",
+                "#E6E6FA"
+            ];
+
+            const corAleatoria = Math.floor(Math.random() * cores.length);
+
+            // Mudando a cor do body usando a função .css() do jQuery
+            $('body').css('background-color', cores[corAleatoria]);
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,89 @@
+ /* Configurações Gerais da Página */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Estilização do Cartão */
+        .profile-card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 24px;
+            width: 320px;
+            text-align: center;
+        }
+
+        /* Título no Topo do Cartão */
+        .card-title {
+            font-size: 20px;
+            color: #333333;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        /* Tabela Invisível para Alinhamento */
+        .invisible-table {
+            width: 100%;
+            border-collapse: collapse;
+            border: none;
+        }
+
+        .invisible-table td {
+            border: none;
+            padding: 8px 0;
+        }
+
+        /* Foto de Perfil */
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        /* Login */
+        .user-login {
+            font-size: 16px;
+            color: #555555;
+            font-weight: 600;
+            margin-top: 5px;
+        }
+
+        /* Descrição Curta (2-3 palavras) */
+        .bio-desc {
+            font-size: 14px;
+            color: #777777;
+            font-style: italic;
+        }
+
+        /* Redes Sociais Alinhadas */
+        .social-icons img {
+            width: 24px;
+            height: 24px;
+            margin: 0 8px;
+            vertical-align: middle;
+        }
+
+        /* Botão "Contact" na Parte de Baixo */
+        .contact-btn {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 15px;
+            transition: background-color 0.2s;
+        }
+
+        .contact-btn:hover {
+            background-color: #0056b3;
+        }

@@ -1,0 +1,51 @@
+/* Botão do Dropdown */
+.dropbtn {
+  background-color: hwb(239 13% 45%);
+  color: #f8f8f8;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+/* O container <div> - necessário para posicionar o conteúdo do dropdown */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Conteúdo do Dropdown (Oculto por Padrão) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Cores de fundo personalizadas para cada linha do menu */
+.pao {
+  background-color: hsl(36, 99%, 35%);
+}
+
+.presunto {
+  background-color: hwb(339 43% 32%);
+}
+
+.queijo {
+  background-color: hsl(45, 100%, 50%); /* Cor amarela para o queijo */
+}
+
+/* LTexto dentro do dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+
+/* Altera a cor de fundo dos links ao passar o mouse */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Mostra o menu dropdown ao passar o mouse sobre o container */
+.dropdown:hover .dropdown-content {display: block;}

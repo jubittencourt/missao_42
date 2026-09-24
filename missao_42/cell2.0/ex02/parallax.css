@@ -1,0 +1,50 @@
+   /* Configurações globais para ocupar toda a tela e definir a fonte */
+      body,
+      html {
+          height: 100%;
+          margin: 0;
+      }
+
+      /* Estrutura base para os blocos de imagem (Parallax) */
+      .parallax-bg1,
+      .parallax-bg2 {
+          position: relative;
+          background-attachment: fixed;
+          /* Fixa a imagem no fundo criando o efeito */
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+          height: 100%;
+          /* Faz cada imagem ocupar a tela cheia */
+      }
+
+      /* Define a primeira imagem de fundo*/
+      .parallax-bg1 {
+          background-image: url("imagem1.png");
+          color: aquamarine;
+      }
+
+      /* Define a segunda imagem de fundo*/
+      .parallax-bg2 {
+          background-image: url("imagem2.png");
+      }
+
+      /* Container que centraliza as mensagens sobre as imagens */
+      .mensagem-centro {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          /* Técnica para centralizar perfeitamente */
+          text-align: center;
+      }
+
+
+      /* O bloco preto pedido no projeto que aparece ao rolar a página */
+      .bloco-preto {
+          background-color: #000000;
+          /* Cor preta pura */
+          color: #ffffff;
+          padding: 80px 40px;
+          text-align: center;
+      }

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Gerenciador de Tarefas</title>
+    
+    <!-- CSS integrado -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+            background-color: #f4f4f9;
+        }
+        h1 {
+            color: #333;
+        }
+        #b_new {
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+        #b_new:hover {
+            background-color: #0056b3;
+        }
+        #ft_list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            max-width: 400px;
+        }
+        .task-item {
+            background-color: white;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: background-color 0.2s;
+        }
+        .task-item:hover {
+            background-color: #fff0f0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Minhas Tarefas</h1>
+    <button id="b_new">Adicionar tarefa</button>
+    
+    <!-- Estrutura obrigatória -->
+    <div id="ft_list"></div>
+
+    <!-- Importando o arquivo JavaScript externo -->
+    <script src="todobis.js" defer></script>
+</body>
+</html>
